@@ -1,13 +1,23 @@
-import React from 'react'
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Menu from "./components/Menu";
 
-const App = () => {
+function App() {
   return (
-    <>
-    <div>
-      <h1 className="text-3xl font-bold">Tiffin service</h1>
+    <div className="min-h-screen bg-[#fffcf8]">
+      <Navbar />
+
+      <main>
+        <Hero />
+        <Menu />
+
+        <section id="services" className="h-20" />
+        <section id="about" className="h-20" />
+        <section id="contact" className="h-20" />
+        <section id="inquiry" className="h-20" />
+      </main>
     </div>
-    </>
-  )
+  );
 }
 
-export default App
+export default App;
