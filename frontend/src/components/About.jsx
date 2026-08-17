@@ -61,7 +61,7 @@ function About() {
 
         {/* Visual Card */}
         <div className="relative">
-          <div className="overflow-hidden rounded-[2rem] bg-stone-900 p-6 shadow-2xl sm:p-8 lg:p-10">
+          <div className="overflow-hidden rounded-4xl bg-stone-900 p-6 shadow-2xl sm:p-8 lg:p-10">
             <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-amber-500/20 blur-2xl" />
 
             <div className="relative">
