@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import AdminLogin from "./admin/AdminLogin";
 import AdminDashboard from "./admin/AdminDashboard";
 import ProtectedRoute from "./admin/ProtectedRoute";
+import AdminFoods from "./admin/AdminFoods";
 
 function Home() {
   return (
@@ -36,19 +37,34 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Public Website */}
+
+        {/* ================= PUBLIC WEBSITE ================= */}
+
         <Route path="/" element={<Home />} />
 
-        {/* Admin Login */}
-        <Route path="/admin/login" element={<AdminLogin />} />
+        {/* ================= ADMIN LOGIN ================= */}
 
-        {/* Protected Admin Area */}
+        <Route
+          path="/admin/login"
+          element={<AdminLogin />}
+        />
+
+        {/* ================= PROTECTED ADMIN AREA ================= */}
+
         <Route element={<ProtectedRoute />}>
+
           <Route
             path="/admin/dashboard"
             element={<AdminDashboard />}
           />
+
+          <Route
+            path="/admin/foods"
+            element={<AdminFoods />}
+          />
+
         </Route>
+
       </Routes>
     </BrowserRouter>
   );
