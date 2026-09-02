@@ -95,10 +95,10 @@ function Footer() {
                 <span>📞</span>
 
                 <a
-                  href="tel:+919999999999"
+                  href="tel:+916207900265"
                   className="transition hover:text-amber-400"
                 >
-                  +91 99999 99999
+                   +91 6207900265
                 </a>
               </li>
 
@@ -106,10 +106,10 @@ function Footer() {
                 <span>✉️</span>
 
                 <a
-                  href="mailto:info@rajdhani-tiffin.com"
+                  href="mailto:rajdhanitiffinservices@gmail.com"
                   className="break-all transition hover:text-amber-400"
                 >
-                  info@rajdhani-tiffin.com
+                  rajdhanitiffinservices@gmail.com
                 </a>
               </li>
             </ul>

@@ -48,10 +48,10 @@ function Contact() {
             </h3>
 
             <a
-              href="tel:+919999999999"
+              href="tel:+916207900265"
               className="mt-2 block text-sm font-semibold text-stone-500 transition hover:text-amber-600"
             >
-              +91 99999 99999
+              +91 6207900265
             </a>
           </div>
 
@@ -66,10 +66,10 @@ function Contact() {
             </h3>
 
             <a
-              href="mailto:info@rajdhani-tiffin.com"
+              href="mailto:rajdhanitiffinservices@gmail.com"
               className="mt-2 block break-all text-sm font-semibold text-stone-500 transition hover:text-amber-600"
             >
-              info@rajdhani-tiffin.com
+              rajdhanitiffinservices@gmail.com
             </a>
           </div>
         </div>
