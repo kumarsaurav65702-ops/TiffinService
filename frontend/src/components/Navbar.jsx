@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const navItems = [
     { label: "Home", href: "#home" },
@@ -23,21 +24,13 @@ function Navbar() {
                 <a
                     href="#home"
                     onClick={closeMenu}
-                    className="flex shrink-0 items-center gap-2.5"
+                    className="flex shrink-0 items-center"
                 >
-                    <div className="grid size-10 place-items-center rounded-xl bg-amber-50 text-xl shadow-sm">
-                        🍱
-                    </div>
-
-                    <div className="flex flex-col leading-none">
-                        <span className="text-base font-extrabold tracking-tight text-stone-900 sm:text-lg">
-                            Rajdhani
-                        </span>
-
-                        <span className="mt-1 text-[8px] font-bold uppercase tracking-[0.16em] text-amber-600 sm:text-[9px]">
-                            Tiffin & Catering
-                        </span>
-                    </div>
+                    <img
+                        src="/rajdhani-logo.png"
+                        alt="Rajdhani Tiffin & Catering"
+                        className="h-14 w-auto object-contain sm:h-16"
+                    />
                 </a>
 
                 {/* Desktop Navigation */}
@@ -46,10 +39,11 @@ function Navbar() {
                         <a
                             key={item.label}
                             href={item.href}
-                            className={`relative py-2 text-sm font-semibold transition-colors ${index === 0
+                            className={`relative py-2 text-sm font-semibold transition-colors ${
+                                index === 0
                                     ? "text-amber-700"
                                     : "text-stone-600 hover:text-amber-700"
-                                }`}
+                            }`}
                         >
                             {item.label}
 
@@ -60,66 +54,163 @@ function Navbar() {
                     ))}
                 </nav>
 
-                {/* Desktop CTA */}
-                <a
-                    href="#inquiry"
-                    className="hidden rounded-xl bg-stone-900 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-amber-700 hover:shadow-md lg:inline-flex"
-                >
-                    Get Tiffin
-                </a>
+                {/* Desktop Actions */}
+                <div className="hidden items-center gap-3 lg:flex">
 
-                {/* Mobile Menu Button */}
-                <button
-                    type="button"
-                    onClick={() => setIsOpen((prev) => !prev)}
-                    aria-label={isOpen ? "Close menu" : "Open menu"}
-                    aria-expanded={isOpen}
-                    className="grid size-10 place-items-center rounded-xl border border-stone-200 bg-white text-stone-800 transition hover:border-amber-300 hover:text-amber-700 lg:hidden"
-                >
-                    {isOpen ? (
+                    {/* Admin Dashboard */}
+                    <Link
+                        to="/admin/dashboard"
+                        aria-label="Admin Dashboard"
+                        title="Admin Dashboard"
+                        className="grid size-10 place-items-center rounded-xl border border-stone-200 bg-white text-stone-600 shadow-sm transition hover:-translate-y-0.5 hover:border-amber-300 hover:bg-amber-50 hover:text-amber-700 hover:shadow-md"
+                    >
                         <svg
                             className="size-5"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
-                            strokeWidth="2"
+                            strokeWidth="1.8"
                         >
-                            <path d="M6 6l12 12M18 6L6 18" />
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"
+                            />
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.9 1.9-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.04 1.56V20h-2.68v-.09a1.7 1.7 0 0 0-1.04-1.56 1.7 1.7 0 0 0-1.88.34l-.06.06-1.9-1.9.06-.06A1.7 1.7 0 0 0 7.76 15a1.7 1.7 0 0 0-1.56-1.04H6v-2.68h.2A1.7 1.7 0 0 0 7.76 10a1.7 1.7 0 0 0-.34-1.88l-.06-.06 1.9-1.9.06.06a1.7 1.7 0 0 0 1.88.34 1.7 1.7 0 0 0 1.04-1.56V5h2.68v.09a1.7 1.7 0 0 0 1.04 1.56 1.7 1.7 0 0 0 1.88-.34l.06-.06 1.9 1.9-.06.06A1.7 1.7 0 0 0 19.4 10a1.7 1.7 0 0 0 1.56 1.04H21v2.68h-.04A1.7 1.7 0 0 0 19.4 15Z"
+                            />
                         </svg>
-                    ) : (
+                    </Link>
+
+                    {/* Get Tiffin */}
+                    <a
+                        href="#inquiry"
+                        className="inline-flex rounded-xl bg-stone-900 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-amber-700 hover:shadow-md"
+                    >
+                        Get Tiffin
+                    </a>
+                </div>
+
+                {/* Mobile Actions */}
+                <div className="flex items-center gap-2 lg:hidden">
+
+                    {/* Admin Dashboard */}
+                    <Link
+                        to="/admin/dashboard"
+                        aria-label="Admin Dashboard"
+                        title="Admin Dashboard"
+                        onClick={closeMenu}
+                        className="grid size-10 place-items-center rounded-xl border border-stone-200 bg-white text-stone-600 transition hover:border-amber-300 hover:bg-amber-50 hover:text-amber-700"
+                    >
                         <svg
                             className="size-5"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
-                            strokeWidth="2"
+                            strokeWidth="1.8"
                         >
-                            <path d="M4 7h16M4 12h16M4 17h16" />
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"
+                            />
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.9 1.9-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.04 1.56V20h-2.68v-.09a1.7 1.7 0 0 0-1.04-1.56 1.7 1.7 0 0 0-1.88.34l-.06.06-1.9-1.9.06-.06A1.7 1.7 0 0 0 7.76 15a1.7 1.7 0 0 0-1.56-1.04H6v-2.68h.2A1.7 1.7 0 0 0 7.76 10a1.7 1.7 0 0 0-.34-1.88l-.06-.06 1.9-1.9.06.06a1.7 1.7 0 0 0 1.88.34 1.7 1.7 0 0 0 1.04-1.56V5h2.68v.09a1.7 1.7 0 0 0 1.04 1.56 1.7 0 0 0 1.88-.34l.06-.06 1.9 1.9-.06.06A1.7 1.7 0 0 0 19.4 10a1.7 1.7 0 0 0 1.56 1.04H21v2.68h-.04A1.7 1.7 0 0 0 19.4 15Z"
+                            />
                         </svg>
-                    )}
-                </button>
+                    </Link>
+
+                    {/* Mobile Menu Button */}
+                    <button
+                        type="button"
+                        onClick={() => setIsOpen((prev) => !prev)}
+                        aria-label={isOpen ? "Close menu" : "Open menu"}
+                        aria-expanded={isOpen}
+                        className="grid size-10 place-items-center rounded-xl border border-stone-200 bg-white text-stone-800 transition hover:border-amber-300 hover:text-amber-700 lg:hidden"
+                    >
+                        {isOpen ? (
+                            <svg
+                                className="size-5"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                            >
+                                <path d="M6 6l12 12M18 6L6 18" />
+                            </svg>
+                        ) : (
+                            <svg
+                                className="size-5"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                            >
+                                <path d="M4 7h16M4 12h16M4 17h16" />
+                            </svg>
+                        )}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Navigation */}
             <div
-                className={`overflow-hidden border-t border-stone-200/70 bg-[#fffcf8] transition-all duration-300 lg:hidden ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                    }`}
+                className={`overflow-hidden border-t border-stone-200/70 bg-[#fffcf8] transition-all duration-300 lg:hidden ${
+                    isOpen
+                        ? "max-h-96 opacity-100"
+                        : "max-h-0 opacity-0"
+                }`}
             >
                 <nav className="mx-auto flex w-full max-w-7xl flex-col px-4 py-3 sm:px-6">
+
                     {navItems.map((item, index) => (
                         <a
                             key={item.label}
                             href={item.href}
                             onClick={closeMenu}
-                            className={`rounded-xl px-4 py-3.5 text-sm font-semibold transition ${index === 0
+                            className={`rounded-xl px-4 py-3.5 text-sm font-semibold transition ${
+                                index === 0
                                     ? "bg-amber-50 text-amber-700"
                                     : "text-stone-600 hover:bg-stone-50 hover:text-amber-700"
-                                }`}
+                            }`}
                         >
                             {item.label}
                         </a>
                     ))}
 
+                    {/* Mobile Admin Dashboard */}
+                    <Link
+                        to="/admin/dashboard"
+                        onClick={closeMenu}
+                        className="mt-2 flex items-center gap-3 rounded-xl bg-stone-100 px-4 py-3.5 text-sm font-bold text-stone-700 transition hover:bg-amber-50 hover:text-amber-700"
+                    >
+                        <svg
+                            className="size-5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.8"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"
+                            />
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.9 1.9-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.04 1.56V20h-2.68v-.09a1.7 1.7 0 0 0-1.04-1.56 1.7 1.7 0 0 0-1.88.34l-.06.06-1.9-1.9.06-.06A1.7 1.7 0 0 0 7.76 15a1.7 1.7 0 0 0-1.56-1.04H6v-2.68h.2A1.7 1.7 0 0 0 7.76 10a1.7 1.7 0 0 0-.34-1.88l-.06-.06 1.9-1.9.06.06a1.7 1.7 0 0 0 1.04-1.56V5h2.68v.09a1.7 1.7 0 0 0 1.04 1.56l.06-.06 1.9 1.9-.06.06A1.7 1.7 0 0 0 19.4 15Z"
+                            />
+                        </svg>
+
+                        Admin Dashboard
+                    </Link>
+
+                    {/* Get Tiffin */}
                     <a
                         href="#inquiry"
                         onClick={closeMenu}

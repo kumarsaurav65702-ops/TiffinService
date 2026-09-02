@@ -13,6 +13,7 @@ import AdminLogin from "./admin/AdminLogin";
 import AdminDashboard from "./admin/AdminDashboard";
 import ProtectedRoute from "./admin/ProtectedRoute";
 import AdminFoods from "./admin/AdminFoods";
+import AdminQueries from "./admin/AdminQueries";
 
 function Home() {
   return (
@@ -62,6 +63,10 @@ function App() {
             path="/admin/foods"
             element={<AdminFoods />}
           />
+            <Route
+    path="/admin/queries"
+    element={<AdminQueries />}
+  />
 
         </Route>
 

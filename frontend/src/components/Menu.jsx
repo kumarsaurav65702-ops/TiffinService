@@ -37,8 +37,9 @@ function Menu() {
       className="bg-stone-50 px-4 py-20 sm:px-6 lg:px-8 lg:py-24"
     >
       <div className="mx-auto max-w-7xl">
+
         {/* Heading */}
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-amber-600">
             Our Menu
           </span>
@@ -51,6 +52,29 @@ function Menu() {
             Simple, delicious and wholesome meals prepared fresh for you
             every day.
           </p>
+
+          {/* Download Menu */}
+          <div className="mt-7 flex justify-center">
+            <a
+              href="/menu.pdf"
+              download="Rajdhani-Kitchen-Weekly-Menu.pdf"
+              className="inline-flex items-center gap-2 rounded-xl bg-stone-900 px-5 py-3 text-sm font-extrabold text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-amber-600 hover:shadow-md active:scale-95"
+            >
+              <svg
+                className="h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M12 3v12" />
+                <path d="m7 10 5 5 5-5" />
+                <path d="M5 21h14" />
+              </svg>
+
+              Download Menu
+            </a>
+          </div>
         </div>
 
         {/* Loading */}
@@ -65,8 +89,11 @@ function Menu() {
 
                 <div className="space-y-3 p-5">
                   <div className="h-5 w-2/3 animate-pulse rounded bg-stone-200" />
+
                   <div className="h-4 w-full animate-pulse rounded bg-stone-100" />
+
                   <div className="h-4 w-4/5 animate-pulse rounded bg-stone-100" />
+
                   <div className="h-8 w-1/3 animate-pulse rounded bg-stone-200" />
                 </div>
               </div>
@@ -84,7 +111,7 @@ function Menu() {
             <button
               type="button"
               onClick={() => window.location.reload()}
-              className="mt-4 rounded-xl bg-stone-900 px-5 py-2.5 text-xs font-bold text-white"
+              className="mt-4 rounded-xl bg-stone-900 px-5 py-2.5 text-xs font-bold text-white transition hover:bg-amber-600"
             >
               Try Again
             </button>
